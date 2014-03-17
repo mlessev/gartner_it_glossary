@@ -5,7 +5,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'date'
 require 'yaml'
-#require 'json'
+require 'json'
 #require 'pp'
 #require 'uri'
 #require 'net/http'
@@ -77,7 +77,7 @@ doc.search('div[@class="subcat-list"]/div/ul/li').each do |v|
           key: key
         }   
 
-        #puts data.to_json
+        puts data.to_json
         ScraperWiki::save_sqlite(unique_keys=['key', 'category'], data, table_name="webopedia_glossary", verbose=0)
         ScraperWiki::commit()
       end
